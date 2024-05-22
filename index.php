@@ -1,11 +1,17 @@
 <?php
-require_once __DIR__. "/partials/function.php";
-
-if (!isset($_SESSION)) {
-    session_start();
+$a = "ciao";
+$b = "pippo";
+if(!empty($_GET["email"])){
+    $email= $_GET["email"];
 }
-if(isset($_GET["email"])){
+require_once __DIR__. "/partials/function.php";
+if (!isset($_SESSION["email"])) {
+    session_unset();
+    echo $a;
+} else {
+    session_start();
     $_SESSION["email"]= $_GET["email"];
+    echo $b;
 }
 ?>
 
@@ -19,14 +25,13 @@ if(isset($_GET["email"])){
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <form action="" method="GET">
+    <form method="GET">
         <label for="email">inserisci la tua email</label>
-        <input id="email" type="text" name="email" value="<?php echo isset($_SESSION["email"])? $_SESSION["email"] : '';?>">
+        <input id="email" type="text" name="email" value="<?php echo isset($email) ? $email : '';?>">
         <button type="submit">invia</button>
     </form>
+    <?php echo $value;?>
 
-    <?php echo $value;
-            ?>
 
 </body>
 </html>

@@ -11,9 +11,11 @@
     if (isset($_SESSION)) {
         session_start();
     }
+    $_SESSION["goodbye"]=true;
+
     require_once __DIR__ . "/function.php";
     echo "<span class='alert-success'>password corretta</span>";
     ?>
-    <a href="index.php"></a>
+    <a href="../index.php">logout</a>
 </body>
 </html>
