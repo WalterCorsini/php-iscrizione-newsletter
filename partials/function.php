@@ -9,7 +9,7 @@ if (isset($_SESSION["email"]) && strpos($_SESSION["email"], '.') && strpos($_SES
 
 // else error
 } elseif(!empty($_SESSION["email"])) {
-    $value = "<span class='alert-danger'>non corrisponde</span>";
+    $value = "<span class='p-2 alert-danger'>non corrisponde</span>";
     session_destroy();
 }
 // else error
