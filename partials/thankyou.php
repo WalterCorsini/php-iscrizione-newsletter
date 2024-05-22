@@ -21,17 +21,17 @@ if ($_SESSION["auth"]) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>thankyou</title>
+        <!-- bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <!-- style css -->
         <link rel="stylesheet" href="../css/style.css">
-         <!-- bootstrap -->
-         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="body">
         <!-- log-out -->
-        <div class="p-5 d-flex flex-column justify-content-center align-items-center">
+        <div class="btn-logout d-flex flex-column justify-content-center align-items-center">
                 <?= $value ?>
-                <a class="m-3 btn btn-outline-success" href="../index.php">log out</a>
+                <a class="m-3 btn btn-outline-danger" href="../index.php">log out</a>
         </div>
         <!-- /log-out -->
 </body>
