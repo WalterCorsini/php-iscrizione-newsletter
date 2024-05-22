@@ -1,10 +1,14 @@
-
 <?php
-require_once __DIR__ . "/partials/function.php";
+require_once __DIR__. "/partials/function.php";
+
+if (!isset($_SESSION)) {
     session_start();
-    if(isset($_GET["email"])){
-    }
+}
+if(isset($_GET["email"])){
+    $_SESSION["email"]= $_GET["email"];
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,11 +21,12 @@ require_once __DIR__ . "/partials/function.php";
 <body>
     <form action="" method="GET">
         <label for="email">inserisci la tua email</label>
-        <input id="email" type="text" name="email" value="<?php isset($_SESSION['email']) ? $_SESSION['email'] : '' ?>">
+        <input id="email" type="text" name="email" value="<?php echo isset($_SESSION["email"])? $_SESSION["email"] : '';?>">
         <button type="submit">invia</button>
     </form>
 
-    <?php echo $value; ?>
+    <?php echo $value;
+            ?>
 
 </body>
 </html>
