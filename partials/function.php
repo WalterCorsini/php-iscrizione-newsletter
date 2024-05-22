@@ -1,15 +1,17 @@
-<?php 
+<?php
 session_start();
-session_unset();
-$_SESSION["email"]="";
 $_SESSION["email"]= $_GET["email"];
+// condition for correct email
 if (isset($_SESSION["email"]) && strpos($_SESSION["email"], '.') && strpos($_SESSION["email"], '@' )) {
-        echo "@ e . trovati";
-        $_SESSION["auth"]= "ok";
-        header('location: ./partials/thankyou.php');
-    } else {
-        if(!empty($_SESSION["email"])){
-            $value = "<span class='alert-danger'>non corrisponde</span>";
-        }
-    }
+    $_SESSION["auth"]= "ok";
+    header('location: ./partials/thankyou.php');
+// /condition for correct email
+
+// else error
+} elseif(!empty($_SESSION["email"])) {
+    $value = "<span class='alert-danger'>non corrisponde</span>";
+    session_destroy();
+}
+// else error
+    
 ?>
