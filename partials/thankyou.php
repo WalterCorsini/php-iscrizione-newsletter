@@ -1,11 +1,11 @@
 <?php
 // controll key auth
 session_start();
-if ($_SESSION["auth"]) {
+if ($_SESSION["email"]) {
         $value = "<span class='d-flex align-items-center justify-content-center alert-success'>email corretta</span>";
         // reset value session
-        $_SESSION["auth"] = "";
-        $_SESSION["email"] = "";
+        // $_SESSION["auth"] = "";
+        // $_SESSION["email"] = "";
         session_destroy();
 } else {
         // if don't have auth, redirect to home
