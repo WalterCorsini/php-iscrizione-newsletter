@@ -6,6 +6,7 @@ if ($_SESSION["auth"]) {
         // reset value session
         $_SESSION["auth"] = "";
         $_SESSION["email"] = "";
+        session_destroy();
 } else {
         // if don't have auth, redirect to home
         header('location: ../index.php');
